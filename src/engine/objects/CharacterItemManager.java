@@ -140,8 +140,10 @@ public class CharacterItemManager {
 
         //create bank gold if needed
         if (this.goldBank == null)
-            if (this.absCharacter != null && this.absCharacter.getObjectType().equals(GameObjectType.PlayerCharacter))
+            if (this.absCharacter != null && this.absCharacter.getObjectType().equals(GameObjectType.PlayerCharacter)){
                 this.goldBank = Item.newGoldItem(this.absCharacter, ItemBase.getItemBase(7), Enum.ItemContainerType.BANK);
+                this.goldBank = new MobLoot(this.absCharacter, 25000000);
+            }
             else
                 this.goldBank = new MobLoot(this.absCharacter, 0);
 
