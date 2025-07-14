@@ -47,6 +47,7 @@ public enum ConfigManager {
     // Login server config
 
     MB_LOGIN_PORT,
+    MB_GMLOGIN_PORT,
     MB_LOGIN_AUTOREG,
     MB_LOGIN_FNAME_REGEX,
 
