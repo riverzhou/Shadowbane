@@ -19,9 +19,10 @@ fi
 
 # Dump database to target file
 
-        mysqldump --routines=true magicbane > dumps/$OUTFILE
+        mysqldump -uroot -p12345678 --routines=true magicbane > dumps/$OUTFILE
 
 # Strip DEFINER tags from output file
 
         sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' -i  dumps/$OUTFILE
         echo "Done!"
+
