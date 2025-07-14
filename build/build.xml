@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project name="magicbane" default="createjar">
+
+<!-- global properties for this build file -->
+<property name="source.dir" location="../build/Server"/>
+<property name="classes.dir" location="../build/classes"/>
+<property name="deploy.dir" location="../build/bin"/>
+
+<!-- Project classpath -->
+<path id="project-classpath">
+        <fileset dir="${classes.dir}" includes="**/*.jar" />
+        <fileset dir="../Dependencies/" includes="**/*.jar" />
+        </path>
+
+<!-- Start Build Process: Clean binary target directory -->
+<target name="clean">
+<delete dir="${deploy.dir}" />
+<mkdir dir="${deploy.dir}"/>
+<delete dir="${classes.dir}" />
+<mkdir dir="${classes.dir}"/>
+</target>
+
+<!-- Compile src to java class files -->
+<target name="compile" depends="clean">
+<javac includeantruntime="false" destdir="${classes.dir}" classpathref="project-classpath" debug="on" >
+<src path="${source.dir}" />
+</javac>
+</target>
+
+<!-- Build jar file -->
+<target name="createjar" depends="compile">
+<jar destfile="${deploy.dir}/magicbane.jar" basedir="${classes.dir}" />
+</target>
+
+</project>
