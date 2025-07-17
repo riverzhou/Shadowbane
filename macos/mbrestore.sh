@@ -9,12 +9,7 @@ echo Killing server
 
 ./mbkill.sh
 
-if [ "$1" == "" ]
-        then
-         INPUTFILE="mbdump.sql"
-        else
-         INPUTFILE="$1"
-fi
+INPUTFILE="mbdump.sql"
 
 # Strip DEFINER tags from the input
 
