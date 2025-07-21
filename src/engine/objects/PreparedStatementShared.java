@@ -939,6 +939,7 @@ public class PreparedStatementShared implements PreparedStatement {
      *
      * @deprecated
      **/
+    @Deprecated
     @Override
     public void close() throws SQLException {
         this.release(); // redirect to release method
