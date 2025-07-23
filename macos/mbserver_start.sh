@@ -28,5 +28,5 @@ fi
 
 CLASSPATH=Dependencies/*
 
-exec java -server -Xcomp -XX:ReservedCodeCacheSize=2048m -cp "$CLASSPATH":"$LIB" engine.server.world.WorldServer -Djava.awt.headless=true
+exec java -server -Xcomp -XX:ReservedCodeCacheSize=2048m -XX:+UseZGC -Xms32G -Xmx32G -cp "$CLASSPATH":"$LIB" engine.server.world.WorldServer -Djava.awt.headless=true
 
