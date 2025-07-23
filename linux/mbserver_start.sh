@@ -40,6 +40,6 @@ fi
 
 if [ "$1" == "" ]
         then
-        exec java -server -Xcomp -XX:ReservedCodeCacheSize=2048m -cp "$CLASSPATH":"$LIB" engine.server.world.WorldServer -Djava.awt.headless=true
+        exec java -server -Xcomp -XX:ReservedCodeCacheSize=2048m -XX:+UseZGC -Xms16G -Xmx16G -cp "$CLASSPATH":"$LIB" engine.server.world.WorldServer -Djava.awt.headless=true
 fi
 
